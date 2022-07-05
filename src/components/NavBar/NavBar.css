@@ -9,12 +9,13 @@
 .NavBarul{
     display:flex;
     margin-top:38px;
-    margin-left: 100px;
+    margin-left: 130px;
+    margin-right:40px;
 }
 
 .NavBaritem{
-    padding-right:100px;
     list-style: none;
+    padding-right: 55px;
     display: inline-block;
 }
 
@@ -28,7 +29,7 @@
 }
 
 .login{
-    margin-left: 100px;
+    margin-left: 78px;
     margin-top:25px;
     margin-right:10px;
     background:wheat;

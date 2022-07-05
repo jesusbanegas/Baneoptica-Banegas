@@ -1,3 +1,4 @@
+import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
 const Styles ={
@@ -6,7 +7,7 @@ const Styles ={
         height: '100px',
         borderRadius:'100px',
         marginLeft:'50px',
-        marginRight:'50px',
+        width:'1170px',
         marginTop:'15px',
 }
 };
@@ -29,6 +30,7 @@ const NavBar = () => {
                 </ul>
             </nav>
             <button className='login'>LOGIN</button>
+            <CartWidget CartWidgetProps={1}/>
         </div>
     </div>
 }
