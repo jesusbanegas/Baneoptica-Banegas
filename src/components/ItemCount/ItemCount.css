@@ -1,0 +1,105 @@
+.ContenedorGeneral{
+    width: 400px;
+    height: 350px;
+    margin-left: 450px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.ContenedorInterior{
+    display: flex;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    width: 350px;
+    margin-left: 21px;
+    height: 100px;
+}
+
+.Numero{
+    margin-left:50px;
+    margin-right:50px;
+    margin-top: 7px;
+}
+
+.Boton1{
+    margin-left: 85px;
+    height: 38px;
+    padding-left:10px;
+    padding-right:17px;
+    width: 10px;
+    border-radius: 10px;
+    border-width: 1.5px;
+    cursor:pointer;
+    margin-top:35px;
+    font-size: 23px;
+    background-color: wheat;
+}
+
+.Boton1:hover{
+    background:sandybrown;
+}
+
+.Boton1:active{
+    background:rgb(225, 112, 13);
+}
+
+.Boton2{
+    cursor:pointer;
+    height: 38px;
+    padding-left:10px;
+    padding-right:21px;
+    width: 10px;
+    border-radius: 10px;
+    border-width: 1.5px;
+    cursor:pointer;
+    margin-top:35px;
+    font-size: 20px;
+    text-align: left;
+    background-color: wheat;
+}
+
+.Boton2:hover{
+    background:sandybrown;
+}
+
+.Boton2:active{
+    background:rgb(225, 112, 13);
+}
+
+.NombreProducto{
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom:50px;
+}
+
+.AñadirCarrito{
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 354px;
+    margin-left: 21px;
+    margin-top: 30px;
+    height: 40px;
+    cursor: pointer;
+    background-color: wheat;
+}
+
+.AñadirCarrito:hover{
+    background:sandybrown;
+}
+
+.AñadirCarrito:active{
+    background:rgb(225, 112, 13);
+}
+
+.NoHayStock{
+    margin-right: 14px;
+    margin-left: 12.5px;
+    margin-top:25px;
+}
