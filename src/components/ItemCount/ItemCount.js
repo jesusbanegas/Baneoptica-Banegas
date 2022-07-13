@@ -8,7 +8,7 @@ const ItemCount = ({stock,initial,NombreProducto, onAdd}) => {
     const [numero,setNumero] = useState(parseInt({initial}));
     
     const sumar = () => {
-        numero > stock ? (numero = numero) : (setNumero (numero + 1))
+        numero > stock ? (setNumero(numero)) : (setNumero (numero + 1))
     };
 
     const restar = () => {
@@ -34,7 +34,7 @@ const ItemCount = ({stock,initial,NombreProducto, onAdd}) => {
         <div className="ContenedorInterior">
             <button onClick={restar} className="Boton1">-</button>
             <h3>{
-            numero <= stock ? (<h1 className="Numero">{numero}</h1>) : (<h5 className="NoHayStock">No hay stock</h5>)
+            numero <= stock ? (<p className="Numero">{numero}</p>) : (<p className="NoHayStock">No hay stock</p>)
             }
             </h3>
             <button onClick={sumar} className="Boton2">+</button>

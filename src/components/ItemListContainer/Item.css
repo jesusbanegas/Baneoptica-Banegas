@@ -1,0 +1,63 @@
+.ItemStyle{
+    width: 400px;
+    height: 420px;
+    margin-left: 14px;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.Imagenes{
+    height: 150px;
+    width: auto;
+    margin-left: 90px;
+    margin-top: 20px
+}
+
+.Precio{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 650;
+}
+
+.NombreItem{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 200;
+}
+
+.DetalleProducto{
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    background-color: wheat;
+    width: 300px;
+    margin-left: 52px;
+    height: 40px;
+}
+
+.TextoDetalle{
+    margin-left: 65px;
+    font-size: 16px;
+    font-weight: 200;
+    margin-top: 8.5px;
+}
+
+.Stock{
+    margin-left:110px
+}
+
+.linkDetalle{
+    text-decoration: none;
+    color:black;
+}
+
+.Id{
+    float: right;
+    margin-right:14px;
+}

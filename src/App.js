@@ -4,10 +4,10 @@ import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
-    <body>
+    <div>
       <NavBar />
       <ItemListContainer greeting={'Saludos :D'} />
-    </body>
+    </div>
   );
 }
 
