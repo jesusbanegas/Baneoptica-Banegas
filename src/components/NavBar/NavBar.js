@@ -1,5 +1,6 @@
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
+import {Link} from 'react-router-dom';
 
 const Styles ={
     NavBarStyles: {
@@ -19,7 +20,7 @@ const NavBar = () => {
             <nav className="NavBarlist">
                 <ul className='NavBarul'>
                     <li className='NavBaritem'>
-                        <a className='listlink' href='#'>Gafas Graduadas</a>
+                        <Link className='listlink' to='graduadas'>Gafas Graduadas</Link>
                     </li>
                     <li className='NavBaritem'>
                         <a className='listlink' href='#'>Gafas de sol</a>

@@ -1,0 +1,54 @@
+.DivisorGeneral{
+    width: 700px;
+    height: 450px;
+    margin-left: 300px;
+    background-color: white;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 15px;
+}
+
+.ID{
+    margin-left: 15px;
+}
+
+.Nombre{
+    font-size: 25px;
+}
+
+.ImagenProducto{
+    height: 170px;
+    margin-left:15px;
+}
+
+.DivisorInt{
+    float:right;
+    margin-right: 50px;
+}
+
+.PrecioProducto{
+    font-size:25px;
+    font-weight: 350;
+}
+
+.StockProducto{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.Descripcion{
+    font-size:15px;
+    font-weight: 300;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.DescripcionTitulo{
+    margin-top: 50px;
+    margin-left: 15px;
+    font-size:18px;
+    font-weight: 500;
+    text-decoration-line: underline;
+}

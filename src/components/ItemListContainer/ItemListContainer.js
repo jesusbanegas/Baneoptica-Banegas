@@ -17,8 +17,8 @@ const ItemListContainer = ({greeting}) => {
             }, 2000);
         });
         llamarProductos
-            .then((data) => {
-                setItems(data);
+        .then((data) => {
+            setItems(data);
         })
         .catch((error) => {
             console.log(error);
