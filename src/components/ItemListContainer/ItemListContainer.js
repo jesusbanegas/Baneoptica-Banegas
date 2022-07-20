@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "./ItemList";
 import products from "../../mock/products";
+import { useParams, Link } from "react-router-dom";
 
 // El "greeting" con el texto provisional "saludos" se lo manda desde "App.js"
 
 const ItemListContainer = ({greeting}) => {
+
+    //Cogemos con el useParams "category" del link del sitio
+    
+    const {category} = useParams()
 
     // Llamamos a los productos simulando un retardo en la red, a "products.js"
     
@@ -13,7 +17,7 @@ const ItemListContainer = ({greeting}) => {
     useEffect(()=> {
         const llamarProductos = new Promise((res,rej) => {
             setTimeout(() => {
-                res(products);
+                res(category ? products.filter(obj => obj.category === category) : products);
             }, 2000);
         });
         llamarProductos
@@ -23,15 +27,12 @@ const ItemListContainer = ({greeting}) => {
         .catch((error) => {
             console.log(error);
         });
-    }, []);
+    }, [category]);
 
-    const onAdd = (numProductos) => {
-        const mensaje = alert(`Añadiste ${numProductos} unidades a tu carrito`)
-    }
-
-    return <><h1 style={{display:'flex',justifyContent:'center'}}>{greeting}</h1> 
-    <ItemList items = {items}/>
-    <ItemCount initial={1} stock={5} NombreProducto={'Gafas Graduadas'} onAdd={onAdd}/>
+    return <>
+        <h1 style={{display:'flex',justifyContent:'center'}}>{greeting}</h1> 
+        <ItemList items = {items}/>
+        <Link to='/' style={{fontSize:'20px', padding:'5px', textDecoration:'none', marginTop:'10px', float:'right',marginRight:'20px',color:'black', marginBottom:'15px'}}>Volver a inicio</Link>
     </>
 };
 

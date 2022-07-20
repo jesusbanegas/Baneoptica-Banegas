@@ -13,20 +13,23 @@ const Styles ={
 }
 };
 
+// Componente que muestra la barra de navegación del e-commerce, se mostrará todo el tiempo.
+
 const NavBar = () => {
+
     return <div style = {Styles.NavBarStyles}>
         <div className='generalContainer'>
-            <a className='Logo' href='#'>BaneÓptica</a>
+            <Link className='Logo' to='/'>BaneÓptica</Link>
             <nav className="NavBarlist">
                 <ul className='NavBarul'>
                     <li className='NavBaritem'>
-                        <Link className='listlink' to='graduadas'>Gafas Graduadas</Link>
+                        <Link className='listlink' to="/categoria/graduadas">Gafas Graduadas</Link>
                     </li>
                     <li className='NavBaritem'>
-                        <a className='listlink' href='#'>Gafas de sol</a>
+                        <Link className='listlink' to="/categoria/sol">Gafas de sol</Link>
                     </li>
                     <li className='NavBaritem'>
-                        <a className='listlink' href='#'>Lentillas</a>
+                        <Link className='listlink' to="/categoria/lentillas">Lentillas</Link>
                     </li>
                 </ul>
             </nav>

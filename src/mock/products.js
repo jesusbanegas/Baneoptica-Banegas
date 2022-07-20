@@ -13,7 +13,7 @@ const products = [
         price:105,
         stock:20,
         img: GraduadasCuadradas,
-        category:'GafasGraduadas',
+        category:'graduadas',
         description:'Gafas graduadas clasicas de forma cuadrada, con montura negra de grosor 5mm.',
     },
     {
@@ -22,7 +22,7 @@ const products = [
         price:78,
         stock:14,
         img: GraduadasNerd,
-        category:'GafasGraduadas',
+        category:'graduadas',
         description:'Gafas graduadas redondas estilo nerd, con montura ancha de color negra y gris. #nerds4life!',
     },
     {
@@ -31,7 +31,7 @@ const products = [
         price:150,
         stock:32,
         img: SolAviador,
-        category:'GafasSol',
+        category:'sol',
         description:'Gafas de sol estilo aviador con color de montura gris y color de cristal azul, para los más veteranos.',
     },
     {
@@ -40,7 +40,7 @@ const products = [
         price:132,
         stock:22,
         img: SolRedondas,
-        category:'GafasSol',
+        category:'sol',
         description:'Gafas de sol estilo redondas, con color de montura negra y color de cristal morado, se ven bien cool cierto?',
     },
     {
@@ -49,7 +49,7 @@ const products = [
         price:30,
         stock:58,
         img: LentillasDiarias,
-        category:'Lentillas',
+        category:'lentillas',
         description:'Lentes de contacto diarias de gran comodidad, con solución de agua en la superficie superior al 80%.',
     },
     {
@@ -58,7 +58,7 @@ const products = [
         price:65,
         stock:13,
         img: LentillasSolucion,
-        category:'Lentillas',
+        category:'lentillas',
         description:'Lágrima artificial diseñada para proporcionar protección, hidratación, y lubricación en el ojo seco.',
     },
 ];

@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# PROYECTO REACTJS DEL CURSO DE CODERHOUSE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El proyecto trata de aplicar los conocimientos adquiridos en el curso de reactjs en la plataforma CoderHouse, a través de la creación de un e-commerce ficticio.
 
-## Available Scripts
+Simula un espacio web de una óptica donde se muestran algunos productos típicos de estos negocios.
 
-In the project directory, you can run:
+## Aspectos generales:
 
-### `npm start`
+Uno de los aspectos más significativos del proyecto es el uso de componentes y el enlace entre ellos para lograr desarrollar el proyecto. Se aplican conocimientos básicos de programación web como html, css, javascript, y la implementación de JSX como nuevo recurso.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Cada componente se encuentra ordenado en la carpeta "src/components", con el respectivo nombre general de cada uno de ellos.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Siguiendo los pasos de cada desafio y las recomendaciones de creación de cada componente, predomina el uso de muchos componentes donde cada uno tiene una funcionalidad, con el fin de poder facilitar la lectura y poder practicar de manera más consecutiva el enlace entre componentes, así como el uso de "props" o "hooks" entre otros.
 
-### `npm test`
+En algunos archivos se encuentran notas o aclaraciones con el objetivo de mejorar la lectura del código.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Como aspecto general cabe añadir que se busca la implementación únicamente de recursos trabajados en clase o en los AfterClass, y no se incluyen dependencias extras por npm.
 
-### `npm run build`
+## Diseño:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+El proyecto está enfocado a la creación de un espacio web visualmente sencillo y intuitivo, donde predomina el uso eficaz y simple del código a través de la unión de los diversos componentes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Productos:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Los productos utilizados són totalmente ficticios, y por tanto toda la información que se pueda mostrar también lo es. Las imagenes són de libre uso, sacadas de diversas páginas web públicas que proporcionan este tipo de archivos.
 
-### `npm run eject`
+Estos provienen de un archivo "products.js" donde se ha creado un arreglo de objetos con la diferente información de cada uno de los productos, y que será extraida en los diferentes componentes para lograr funcionalidad en la web.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## React-router-dom:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Se aplica el uso del "React-router-dom" como recurso para poder navegar por el e-commerce.

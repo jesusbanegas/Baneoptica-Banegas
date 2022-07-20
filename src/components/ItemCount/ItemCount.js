@@ -3,7 +3,7 @@ import "./ItemCount.css";
 
 const ItemCount = ({stock,initial,NombreProducto, onAdd}) => {
 
-    // Las props provienen del "ItemListContainer.js"
+    // Las props provienen del "ItemDetailContainer.js"
     
     const [numero,setNumero] = useState(parseInt({initial}));
     
