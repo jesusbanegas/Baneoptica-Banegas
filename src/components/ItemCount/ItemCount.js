@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import "./ItemCount.css";
 
-const ItemCount = ({stock,initial,NombreProducto, onAdd}) => {
+const ItemCount = ({stock,initial,NombreProducto, onAdd, numero, setNumero}) => {
 
-    // Las props provienen del "ItemDetailContainer.js"
-    
-    const [numero,setNumero] = useState(parseInt({initial}));
+    // Las props provienen del "ItemDetail.js"
     
     const sumar = () => {
         numero > stock ? (setNumero(numero)) : (setNumero (numero + 1))
