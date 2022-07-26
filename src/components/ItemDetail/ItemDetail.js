@@ -1,19 +1,24 @@
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
 // Componente que muestra el detalle del item con la información recibida como prop de cada producto.
 
 // La prop "item" proviene del "ItemDetailContainer.js"
 
 const ItemDetail = ({item}) => {
+
+    const {AddToCart} = useContext(CartContext);
     
     const [numproducto,setNumproducto] = useState(0);
     
     const onAdd = (numProductos) => {
-        const mensaje = alert(`Añadiste ${numProductos} unidades a tu carrito`)
-        setNumproducto(numProductos)
+        setNumproducto(numProductos);
+
+        // El AddToCart envia como variables el item seleccionado y la cantidad de productos seleccionados al "CartContext.js"
+        AddToCart(item,numProductos);
     };
 
     const [numero,setNumero] = useState(1);

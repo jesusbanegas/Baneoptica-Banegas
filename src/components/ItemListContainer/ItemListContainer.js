@@ -3,9 +3,7 @@ import ItemList from "./ItemList";
 import products from "../../mock/products";
 import { useParams, Link } from "react-router-dom";
 
-// El "greeting" con el texto provisional "saludos" se lo manda desde "App.js"
-
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
 
     //Cogemos con el useParams "category" del link del sitio
     
@@ -30,7 +28,6 @@ const ItemListContainer = ({greeting}) => {
     }, [category]);
 
     return <>
-        <h1 style={{display:'flex',justifyContent:'center'}}>{greeting}</h1> 
         <ItemList items = {items}/>
         <Link to='/' style={{fontSize:'20px', padding:'5px', textDecoration:'none', marginTop:'10px', float:'right',marginRight:'20px',color:'black', marginBottom:'15px'}}>Volver a inicio</Link>
     </>
