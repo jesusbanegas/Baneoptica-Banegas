@@ -9,6 +9,7 @@ import ItemDetail from "./ItemDetail";
 const ItemDetailContainer = () => {
     const {id} = useParams()
     const [item,setItem] = useState(null)
+    const [loading,setLoading] = useState(true)
     const getItem = new Promise((res,rej) => {
         setTimeout(() =>{
             res(products[id-1])
@@ -17,14 +18,16 @@ const ItemDetailContainer = () => {
     getItem
     .then((data) =>{
         setItem(data)
+        setLoading(false)
     })
     .catch((error) => {
         console.log(error);
     });
 
-    return item && (<> <ItemDetail item={item}/>
+    return loading ? <h1 style={{textAlign:'center', marginTop:'100px'}}>Cargando Producto...</h1>
+    : (item && (<> <ItemDetail item={item}/>
     <Link to='/' style={{fontSize:'20px', padding:'5px', textDecoration:'none', marginTop:'10px', float:'right',marginRight:'20px',color:'black', marginBottom:'15px'}}>Volver a inicio</Link>
-    </>
-)};
+    </>));
+};
 
 export default ItemDetailContainer

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import FotoCarrito from './FotoCarrito.jpg';
 
 const Styles ={
@@ -25,12 +26,12 @@ const Styles ={
 // La "prop" se la manda el "NavBar.js, para poder cambiar el número en función de los items"
 
 const CartWidget = ({CartWidgetProps}) => {
-    return <a className='CartWidgetLink' href='#' style={Styles.CartWidgetLink}>
+    return <Link to='/cart' className='CartWidgetLink' href='#' style={Styles.CartWidgetLink}>
     <div style = {Styles.CartWidgetContainer}>
         <img src={FotoCarrito} style = {Styles.CartWidgetStyles} alt="Carrito"/>
-        <h3 style = {Styles.CartWidgetNumber}>{CartWidgetProps}</h3>
+        {CartWidgetProps === 0 ? null :<h3 style = {Styles.CartWidgetNumber}>{CartWidgetProps}</h3>}
     </div>
-    </a>
+    </Link>
 };
 
 export default CartWidget

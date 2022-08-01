@@ -38,7 +38,11 @@ const ItemDetail = ({item}) => {
         {numproducto === 0 ? (
             <ItemCount initial={1} stock={item.stock} NombreProducto={item.name} onAdd={onAdd} numero={numero} setNumero={setNumero}/>
             ) : (
-                <Link to="/cart" style={{textDecoration:'none', color:'black'}}><button className='BotonIrAlCarrito'>Ir al carrito</button></Link>
+                <><div style={{display:'inline-grid'}}>
+                    <button className='BotonPostCompra1'><Link to="/cart" style={{textDecoration:'none', color:'black'}}>Ir al carrito</Link></button>
+                    <button className='BotonPostCompra2'><Link to="/" style={{textDecoration:'none', color:'black'}}>Seguir comprando</Link></button>
+                </div>
+                </>
             )}
     </div>
     </>

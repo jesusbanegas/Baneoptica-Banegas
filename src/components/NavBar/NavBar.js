@@ -1,6 +1,8 @@
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 const Styles ={
     NavBarStyles: {
@@ -16,6 +18,8 @@ const Styles ={
 // Componente que muestra la barra de navegación del e-commerce, se mostrará todo el tiempo.
 
 const NavBar = () => {
+
+    const {cart} = useContext(CartContext);
 
     return <div style = {Styles.NavBarStyles}>
         <div className='generalContainer'>
@@ -34,7 +38,7 @@ const NavBar = () => {
                 </ul>
             </nav>
             <button className='login'>LOGIN</button>
-            <CartWidget CartWidgetProps={1}/>
+            <CartWidget CartWidgetProps={cart.length}/>
         </div>
     </div>
 }

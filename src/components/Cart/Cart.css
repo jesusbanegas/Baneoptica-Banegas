@@ -1,0 +1,85 @@
+.DivisorGeneralCart{
+    border: 1px solid black;
+    margin: 20px;
+    display: flex;
+    border-width: 2px;
+    border-radius: 20px;
+}
+
+.ImagenesDetalleCart{
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 40px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-bottom:10px;
+}
+
+.BotonEliminarProducto{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    font-size:20px;
+    border-radius: 10px;
+    border-width: 1.5px;
+    cursor: pointer;
+    float:right;
+    margin-left: 430px;
+    margin-right: 30px;
+    margin-top:65px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.BotonEliminarProducto:hover{
+    background:sandybrown;
+}
+
+.BotonEliminarProducto:active{
+    background:rgb(225, 112, 13);
+}
+
+.BotonEliminarTodos{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    font-size:20px;
+    border-radius: 10px;
+    border-width: 1.5px;
+    cursor: pointer;
+    float:right;
+    margin-right:25px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.BotonEliminarTodos:hover{
+    background:sandybrown;
+}
+
+.BotonEliminarTodos:active{
+    background:rgb(225, 112, 13);
+}
+
+.TerminarMiCompra{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    font-size:20px;
+    border-width: 1.5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 800;
+    margin-left:530px;
+    margin-bottom: 50px;
+}
+
+.TerminarMiCompra:hover{
+    background:sandybrown;
+}
+
+.TerminarMiCompra:active{
+    background:rgb(225, 112, 13);
+}

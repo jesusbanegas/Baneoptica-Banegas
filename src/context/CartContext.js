@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createContext, useState } from "react";
 
 export const CartContext = createContext();
@@ -5,6 +6,7 @@ export const CartContext = createContext();
 const Provider = (props) => {
 
     const [cart,setCart] = useState([])
+    const [total,settotal] = useState(0);
 
     const AddToCart = (item, numProductos) => {
         
@@ -22,13 +24,46 @@ const Provider = (props) => {
         };
     };
 
+    //Si el item está en el carrito, devuelve "True".
+    
     const IsInCart = (id) => {
         return cart.some(prod => prod.id === id)
+        
     };
 
-    console.log(cart)
+    //Expresión para sumar la cantidad de un único producto:
 
-    return <CartContext.Provider value={{cart, AddToCart}}>
+    useEffect(() => {
+        for(var i=0 ; i<cart.length; i++) {
+            const SumaProducto = cart[i].price * cart[i].numProductos;
+            cart[i].suma = SumaProducto
+        };
+        
+    },[cart]);
+
+    //Expresión para calcular la suma total:
+
+    useEffect(() => {
+        let sumatoria = 0;
+        for(var i=0 ; i<cart.length; i++) {
+            sumatoria = sumatoria + cart[i].suma
+            settotal(sumatoria)
+        }
+    },[cart]);
+
+    //Funcion que elimine un único elemento del carrito:
+
+    const eliminarProducto = (id) => {
+        setCart(cart.filter((iter) => iter.id !== id))
+    };
+
+    //Funcion que borre todos los productos del carrito:
+
+    const DeleteAll = () => {
+        setCart([])
+    };
+
+    return <CartContext.Provider value={{cart, AddToCart, DeleteAll, eliminarProducto, total}}>
         {props.children}
         </CartContext.Provider>
 };
