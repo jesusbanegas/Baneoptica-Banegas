@@ -1,28 +1,30 @@
 import {useParams, Link } from "react-router-dom";
-import { useState } from "react";
-import products from "../../mock/products";
+import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import {doc, getDoc, getFirestore} from "firebase/firestore";
 
-// Este componente recopila la información de "products.js" simulando un retraso al recibir los productos de "2s".
 // Lo que devuelve es todo lo relacionado al detalle del producto, es decir, el componente "ItemDetail.js" y el "ItemCount.js"
 
 const ItemDetailContainer = () => {
     const {id} = useParams()
     const [item,setItem] = useState(null)
     const [loading,setLoading] = useState(true)
-    const getItem = new Promise((res,rej) => {
-        setTimeout(() =>{
-            res(products[id-1])
-        },2000);
-    });
-    getItem
-    .then((data) =>{
-        setItem(data)
-        setLoading(false)
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+    
+    const getProduct = async () => {
+        setLoading(true);
+        const db = getFirestore();
+        const productConfig = doc(db, 'items', id)
+        getDoc(productConfig).then((snapshot) => {
+            setItem({...snapshot.data(), id})
+            setLoading(false);
+        });
+    };
+
+    useEffect(()=> {
+        getProduct();
+    }, []);
+
+    console.log(item)
 
     return loading ? <h1 style={{textAlign:'center', marginTop:'100px'}}>Cargando Producto...</h1>
     : (item && (<> <ItemDetail item={item}/>

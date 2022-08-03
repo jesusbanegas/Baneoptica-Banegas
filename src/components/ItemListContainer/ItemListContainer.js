@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import products from "../../mock/products";
 import { useParams, Link } from "react-router-dom";
+import {collection, getDocs, getFirestore, query, where} from "firebase/firestore";
 
 const ItemListContainer = () => {
 
@@ -9,25 +9,26 @@ const ItemListContainer = () => {
     
     const {category} = useParams()
 
-    // Llamamos a los productos simulando un retardo en la red, a "products.js"
+    // Llamamos a los productos a la firebase de Google, y también filtramos por categoria si la obtenemos del enlace con "useParams()"
     
     const [items, setItems] = useState([]);
     const [loading,setLoading] = useState(false)
+    
+    const getProducts = async () => {
+        setLoading(true);
+        const db = getFirestore();
+        await getDocs(category ? (query(collection(db, 'items'), where("category", "==", category))) : (collection(db, 'items'))).then((snapshot) => {
+            setLoading(false);
+            const dataExtraida = snapshot.docs.map((datos) =>{
+                return {...datos.data(), id: datos.id}
+            });
+            setItems(dataExtraida)
+        });
+    };
+    
+    
     useEffect(()=> {
-        setLoading(true)
-        const llamarProductos = new Promise((res,rej) => {
-            setTimeout(() => {
-                res(category ? products.filter(obj => obj.category === category) : products);
-            }, 2000);
-        });
-        llamarProductos
-        .then((data) => {
-            setItems(data);
-            setLoading(false)
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+        getProducts();
     }, [category]);
 
     return loading 
