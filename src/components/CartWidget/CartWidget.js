@@ -26,7 +26,7 @@ const Styles ={
 // La "prop" se la manda el "NavBar.js, para poder cambiar el número en función de los items"
 
 const CartWidget = ({CartWidgetProps}) => {
-    return <Link to='/cart' className='CartWidgetLink' href='#' style={Styles.CartWidgetLink}>
+    return <Link to='/cart' className='CartWidgetLink' style={Styles.CartWidgetLink}>
     <div style = {Styles.CartWidgetContainer}>
         <img src={FotoCarrito} style = {Styles.CartWidgetStyles} alt="Carrito"/>
         {CartWidgetProps === 0 ? null :<h3 style = {Styles.CartWidgetNumber}>{CartWidgetProps}</h3>}

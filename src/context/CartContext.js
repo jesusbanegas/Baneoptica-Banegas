@@ -1,3 +1,4 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useEffect } from "react";
 import { createContext, useState } from "react";
 
@@ -11,7 +12,6 @@ const Provider = (props) => {
     const AddToCart = (item, numProductos) => {
         
         if (IsInCart(item.id) === true) {
-            // Suma de numProductos antiguo con numProductos nuevo
             alert(`Se agregaron ${numProductos} unidad/es más al carrito`)
             const Filtro = (((cart.filter((iter) => iter.id === item.id))[0]).numProductos)
             const NuevoNumero = Filtro + numProductos
@@ -63,7 +63,33 @@ const Provider = (props) => {
         setCart([])
     };
 
-    return <CartContext.Provider value={{cart, AddToCart, DeleteAll, eliminarProducto, total}}>
+    const CreateOrder = (prop) => {
+        var today = new Date();
+        const db = getFirestore();
+        const OrderCollectionQuery = collection(db, 'orders');
+        const Order = {
+            buyer: {name: prop.nombre.value, email: prop.correo.value, phone: prop.telefono.value},
+            items: cart.map((producto) => ({
+                id: producto.id,
+                title: producto.name,
+                price: producto.price,
+                cantidad: producto.numProductos 
+            })),
+            date: today.toLocaleDateString('es-ES'),
+            total: total
+        };
+
+        addDoc(OrderCollectionQuery, Order)
+        .then((snapshot) => {
+            console.log(snapshot.id)
+            alert(`Su ID de referencia es: ${snapshot.id}`)
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+    };
+
+    return <CartContext.Provider value={{cart, AddToCart, DeleteAll, eliminarProducto, total, CreateOrder}}>
         {props.children}
         </CartContext.Provider>
 };

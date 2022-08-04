@@ -83,3 +83,64 @@
 .TerminarMiCompra:active{
     background:rgb(225, 112, 13);
 }
+
+.DivisorFinalCompra{
+    background-color: white;
+    border-radius: 20px;
+    width: 500px;
+    margin-left: 400px;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+.formInput{
+    background:#f2f2f2;
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+
+.BotonTerminarCompra{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    font-size:20px;
+    border-width: 1.5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 800;
+    margin-left: 150px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.BotonTerminarCompra:hover{
+    background:sandybrown;
+}
+
+.BotonTerminarCompra:active{
+    background:rgb(225, 112, 13);
+}
+
+.VolverAlCarrito{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    font-size:20px;
+    border-width: 1.5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 800;
+    margin-top: 390px;
+    margin-left: 100px;
+}
+
+.VolverAlCarrito:hover{
+    background:sandybrown;
+}
+
+.VolverAlCarrito:active{
+    background:rgb(225, 112, 13);
+}
