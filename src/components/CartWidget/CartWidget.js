@@ -23,8 +23,6 @@ const Styles ={
     },
 };
 
-// La "prop" se la manda el "NavBar.js, para poder cambiar el número en función de los items"
-
 const CartWidget = ({CartWidgetProps}) => {
     return <Link to='/cart' className='CartWidgetLink' style={Styles.CartWidgetLink}>
     <div style = {Styles.CartWidgetContainer}>

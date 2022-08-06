@@ -5,12 +5,8 @@ import {collection, getDocs, getFirestore, query, where} from "firebase/firestor
 
 const ItemListContainer = () => {
 
-    //Cogemos con el useParams "category" del link del sitio
-    
     const {category} = useParams()
 
-    // Llamamos a los productos a la firebase de Google, y también filtramos por categoria si la obtenemos del enlace con "useParams()"
-    
     const [items, setItems] = useState([]);
     const [loading,setLoading] = useState(false)
     
@@ -26,15 +22,13 @@ const ItemListContainer = () => {
         });
     };
     
-    
     useEffect(()=> {
         getProducts();
     }, [category]);
 
     return loading 
-    ? <h1 style={{textAlign:'center', marginTop:'100px'}}>Cargando Productos...</h1>
+    ? <h1 style={{textAlign:'center', marginTop:'100px', marginBottom:'250px'}}>Cargando Productos...</h1>
     : (<> <ItemList items = {items}/>
-    <Link to='/' style={{fontSize:'20px', padding:'5px', textDecoration:'none', marginTop:'10px', float:'right',marginRight:'20px',color:'black', marginBottom:'15px'}}>Volver a inicio</Link>
     </>);
 };
 

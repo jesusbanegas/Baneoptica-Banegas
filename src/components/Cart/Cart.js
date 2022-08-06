@@ -11,11 +11,12 @@ const Cart = () => {
     const {cart, DeleteAll, eliminarProducto, total, CreateOrder} = useContext(CartContext);
     if (cart.length === 0) {
         return(
-            <h1 style={{textAlign:'center', marginTop:'100px'}}>No hay productos en el carrito. Volver al <Link to='/' style={{color:'blue'}}>Home</Link></h1>
+            <h1 style={{textAlign:'center', marginTop:'100px', marginBottom:'250px'}}>No hay productos en el carrito. Volver al <Link to='/' style={{color:'blue'}}>Home</Link></h1>
         )
     }
     
     return (mostrarCart === false)
+
     ? ((<div>
         {
             cart.map((prod) => (
@@ -34,6 +35,7 @@ const Cart = () => {
         <h2 style={{marginLeft:'50px', marginTop:'30px'}}>Precio total: {total} $</h2>
         <button className="TerminarMiCompra" onClick={() => setMostrarCart(true)}>Terminar mi compra</button>
     </div>))
+
     : (<div style={{display:'flex'}}>
         <div className="DivisorFinalCompra">
             <h1 style={{textAlign:'center', textDecoration:'underline'}}>Finalizar compra</h1>

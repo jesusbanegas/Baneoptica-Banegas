@@ -4,10 +4,6 @@ import { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
-// Componente que muestra el detalle del item con la información recibida como prop de cada producto.
-
-// La prop "item" proviene del "ItemDetailContainer.js"
-
 const ItemDetail = ({item}) => {
 
     const {AddToCart} = useContext(CartContext);
@@ -16,8 +12,6 @@ const ItemDetail = ({item}) => {
     
     const onAdd = (numProductos) => {
         setNumproducto(numProductos);
-
-        // El AddToCart envia como variables el item seleccionado y la cantidad de productos seleccionados al "CartContext.js"
         AddToCart(item,numProductos);
     };
 

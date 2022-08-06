@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import Provider from './context/CartContext';
+import FooterNav from './components/FooterNav/FooterNav';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/cart' element={<Cart />}/>
           <Route path='*' element={<div>404 Not Found</div>}/>
         </Routes>
+        <FooterNav />
       </BrowserRouter>
     </Provider>
   );

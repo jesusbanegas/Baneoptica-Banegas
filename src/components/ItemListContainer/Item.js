@@ -1,10 +1,6 @@
 import "./Item.css";
 import { Link } from "react-router-dom";
 
-// La prop "item" proviene de "ItemList.js"
-
-// La renderización de este componente viene dada principalmente por la información que le proporciona el "ItemListContainer.js"
-
 const Item = ({item}) => {
 
     return <><div className="ItemStyle">

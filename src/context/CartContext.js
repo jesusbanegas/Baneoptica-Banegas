@@ -1,6 +1,7 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useEffect } from "react";
 import { createContext, useState } from "react";
+import swal from 'sweetalert';
 
 export const CartContext = createContext();
 
@@ -12,26 +13,22 @@ const Provider = (props) => {
     const AddToCart = (item, numProductos) => {
         
         if (IsInCart(item.id) === true) {
-            alert(`Se agregaron ${numProductos} unidad/es más al carrito`)
+            swal(`Se agregaron ${numProductos} unidad/es más al carrito`, "Consulta el carrito para ver tus productos", "success");
             const Filtro = (((cart.filter((iter) => iter.id === item.id))[0]).numProductos)
             const NuevoNumero = Filtro + numProductos
             const newCart = cart.filter((iter) => iter.id !== item.id)
             setCart([...newCart,{...item,numProductos: NuevoNumero}])
         }
         else{
-            alert(`Añadiste ${numProductos} unidad/es a tu carrito`)
+            swal(`Añadiste ${numProductos} unidad/es a tu carrito`, "Consulta el carrito para ver tus productos", "success");
             setCart([...cart,{...item,numProductos}]);
         };
     };
 
-    //Si el item está en el carrito, devuelve "True".
-    
     const IsInCart = (id) => {
         return cart.some(prod => prod.id === id)
         
     };
-
-    //Expresión para sumar la cantidad de un único producto:
 
     useEffect(() => {
         for(var i=0 ; i<cart.length; i++) {
@@ -41,8 +38,6 @@ const Provider = (props) => {
         
     },[cart]);
 
-    //Expresión para calcular la suma total:
-
     useEffect(() => {
         let sumatoria = 0;
         for(var i=0 ; i<cart.length; i++) {
@@ -51,13 +46,9 @@ const Provider = (props) => {
         }
     },[cart]);
 
-    //Funcion que elimine un único elemento del carrito:
-
     const eliminarProducto = (id) => {
         setCart(cart.filter((iter) => iter.id !== id))
     };
-
-    //Funcion que borre todos los productos del carrito:
 
     const DeleteAll = () => {
         setCart([])
@@ -65,8 +56,6 @@ const Provider = (props) => {
 
     const CreateOrder = (prop) => {
         var today = new Date();
-        const db = getFirestore();
-        const OrderCollectionQuery = collection(db, 'orders');
         const Order = {
             buyer: {name: prop.nombre.value, email: prop.correo.value, phone: prop.telefono.value},
             items: cart.map((producto) => ({
@@ -79,14 +68,33 @@ const Provider = (props) => {
             total: total
         };
 
-        addDoc(OrderCollectionQuery, Order)
-        .then((snapshot) => {
-            console.log(snapshot.id)
-            alert(`Su ID de referencia es: ${snapshot.id}`)
-        })
-        .catch((error) => {
-            console.log(error)
-        });
+        swal({
+            title: "Finalizar tu compra?",
+            text: "Al finalizar tu compra se te proporcionará tu ID de referencia, guardalo!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                const db = getFirestore();
+                const OrderCollectionQuery = collection(db, 'orders');
+                addDoc(OrderCollectionQuery, Order)
+                .then((snapshot) => {
+                    swal(`Tu ID de referencia es: ${snapshot.id}`, {
+                        icon: "success",
+                      });
+                })
+                .catch((error) => {
+                    console.log(error)
+                    swal("Algo fue mal", {
+                        icon: "error",
+                      });
+                });
+            } else {
+              swal("Ya puedes seguir navegando");
+            }
+          });
     };
 
     return <CartContext.Provider value={{cart, AddToCart, DeleteAll, eliminarProducto, total, CreateOrder}}>

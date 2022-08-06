@@ -4,6 +4,10 @@ El proyecto trata de aplicar los conocimientos adquiridos en el curso de reactjs
 
 Simula un espacio web de una óptica donde se muestran algunos productos típicos de estos negocios.
 
+[![Paginaweb1](https://res.cloudinary.com/ddjgmaru2/image/upload/v1659768574/CoderHouse-BaneOptica/Paginaweb1_wydpyp.png)]
+[![Paginaweb2](https://res.cloudinary.com/ddjgmaru2/image/upload/v1659768574/CoderHouse-BaneOptica/Paginaweb2_tjjlh8.png)]
+[![Paginaweb3](https://res.cloudinary.com/ddjgmaru2/image/upload/v1659768574/CoderHouse-BaneOptica/Paginaweb3_bon0if.png)]
+
 ## Aspectos generales:
 
 Uno de los aspectos más significativos del proyecto es el uso de componentes y el enlace entre ellos para lograr desarrollar el proyecto. Se aplican conocimientos básicos de programación web como html, css, javascript, y la implementación de JSX como nuevo recurso.
@@ -12,9 +16,7 @@ Cada componente se encuentra ordenado en la carpeta "src/components", con el res
 
 Siguiendo los pasos de cada desafio y las recomendaciones de creación de cada componente, predomina el uso de muchos componentes donde cada uno tiene una funcionalidad, con el fin de poder facilitar la lectura y poder practicar de manera más consecutiva el enlace entre componentes, así como el uso de "props" o "hooks" entre otros.
 
-En algunos archivos se encuentran notas o aclaraciones con el objetivo de mejorar la lectura del código.
-
-Como aspecto general cabe añadir que se busca la implementación únicamente de recursos trabajados en clase o en los AfterClass, y no se incluyen dependencias extras por npm.
+Como aspecto general cabe añadir que, a parte del material trabajado en clase o en los AfterClass, también se añaden componentes / librerias extra para expandir aún más el proyecto.
 
 ## Diseño:
 
@@ -24,8 +26,15 @@ El proyecto está enfocado a la creación de un espacio web visualmente sencillo
 
 Los productos utilizados són totalmente ficticios, y por tanto toda la información que se pueda mostrar también lo es. Las imagenes són de libre uso, sacadas de diversas páginas web públicas que proporcionan este tipo de archivos.
 
-Estos provienen de un archivo "products.js" donde se ha creado un arreglo de objetos con la diferente información de cada uno de los productos, y que será extraida en los diferentes componentes para lograr funcionalidad en la web.
+## Librerias:
 
-## React-router-dom:
+| librerias                                                        | utilizadas                |
+| ---------------------------------------------------------------- | ------------------------- |
+| [ReactJs](https://es.reactjs.org/)                               | JavaScript framework      |
+| [Create React App](https://github.com/facebook/create-react-app) | Create React Project      |
+| [Firebase](https://firebase.google.com/?hl=es)                   | Authentication & DataBase |
+| [React Router](https://reactrouter.com/)                         | Router                    |
+| [Sweet Alert](https://sweetalert.js.org/)                        | Alerts                    |
 
-Se aplica el uso del "React-router-dom" como recurso para poder navegar por el e-commerce.
+
+[![coderhouse](https://res.cloudinary.com/ddjgmaru2/image/upload/v1659768960/CoderHouse-BaneOptica/CoderHouse_njud0l.png)](https://www.coderhouse.com/)

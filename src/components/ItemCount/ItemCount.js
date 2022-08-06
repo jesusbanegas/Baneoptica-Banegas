@@ -3,8 +3,6 @@ import "./ItemCount.css";
 
 const ItemCount = ({stock,initial,NombreProducto, onAdd, numero, setNumero}) => {
 
-    // Las props provienen del "ItemDetail.js"
-    
     const sumar = () => {
         numero > stock ? (setNumero(numero)) : (setNumero (numero + 1))
     };
@@ -12,8 +10,6 @@ const ItemCount = ({stock,initial,NombreProducto, onAdd, numero, setNumero}) => 
     const restar = () => {
         setNumero (numero - 1);
     };
-    
-    // Con el useEffect guardamos el valor inicial recibido como prop "initial"
     
     useEffect(() => {
         setNumero(parseInt(initial))

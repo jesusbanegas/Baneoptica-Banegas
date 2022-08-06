@@ -12,10 +12,7 @@ const Styles ={
         marginLeft:'50px',
         width:'1170px',
         marginTop:'15px',
-}
-};
-
-// Componente que muestra la barra de navegación del e-commerce, se mostrará todo el tiempo.
+}};
 
 const NavBar = () => {
 
