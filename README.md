@@ -5,7 +5,9 @@ El proyecto trata de aplicar los conocimientos adquiridos en el curso de reactjs
 Simula un espacio web de una óptica donde se muestran algunos productos típicos de estos negocios.
 
 ![Paginaweb1](https://res.cloudinary.com/ddjgmaru2/image/upload/v1659768574/CoderHouse-BaneOptica/Paginaweb1_wydpyp.png)
+------------------------------------------------------------------------------------------------------------------------
 ![Paginaweb2](https://res.cloudinary.com/ddjgmaru2/image/upload/v1659768574/CoderHouse-BaneOptica/Paginaweb2_tjjlh8.png)
+------------------------------------------------------------------------------------------------------------------------
 ![Paginaweb3](https://res.cloudinary.com/ddjgmaru2/image/upload/v1659768574/CoderHouse-BaneOptica/Paginaweb3_bon0if.png)
 
 ## Aspectos generales:
