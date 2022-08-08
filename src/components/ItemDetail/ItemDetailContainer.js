@@ -1,4 +1,4 @@
-import {useParams, Link } from "react-router-dom";
+import {useParams} from "react-router-dom";
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import {doc, getDoc, getFirestore} from "firebase/firestore";
@@ -15,14 +15,15 @@ const ItemDetailContainer = () => {
         getDoc(productConfig).then((snapshot) => {
             setItem({...snapshot.data(), id})
             setLoading(false);
+        })
+        .catch((error) => {
+            console.log(error);
         });
     };
 
     useEffect(()=> {
         getProduct();
     }, []);
-
-    console.log(item)
 
     return loading ? <h1 style={{textAlign:'center', marginTop:'100px', marginBottom:'250px'}}>Cargando Producto...</h1>
     : (item && (<> <ItemDetail item={item}/>

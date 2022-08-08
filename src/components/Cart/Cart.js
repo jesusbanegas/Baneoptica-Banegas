@@ -7,8 +7,8 @@ import './Cart.css';
 const Cart = () => {
 
     const [mostrarCart, setMostrarCart] = useState(false)
-    
     const {cart, DeleteAll, eliminarProducto, total, CreateOrder} = useContext(CartContext);
+
     if (cart.length === 0) {
         return(
             <h1 style={{textAlign:'center', marginTop:'100px', marginBottom:'250px'}}>No hay productos en el carrito. Volver al <Link to='/' style={{color:'blue'}}>Home</Link></h1>

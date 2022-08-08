@@ -6,6 +6,7 @@ const Styles ={
         backgroundColor: 'white',
         height: '60px',
         borderRadius:'100px',
+        marginLeft:'150px',
 },
     CartWidgetContainer: {
         display: 'flex',

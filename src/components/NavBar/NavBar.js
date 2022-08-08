@@ -34,7 +34,6 @@ const NavBar = () => {
                     </li>
                 </ul>
             </nav>
-            <button className='login'>LOGIN</button>
             <CartWidget CartWidgetProps={cart.length}/>
         </div>
     </div>

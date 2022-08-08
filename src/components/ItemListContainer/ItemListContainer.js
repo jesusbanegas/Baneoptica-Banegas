@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {collection, getDocs, getFirestore, query, where} from "firebase/firestore";
 
 const ItemListContainer = () => {
@@ -19,6 +19,9 @@ const ItemListContainer = () => {
                 return {...datos.data(), id: datos.id}
             });
             setItems(dataExtraida)
+        })
+        .catch((error) => {
+            console.log(error);
         });
     };
     

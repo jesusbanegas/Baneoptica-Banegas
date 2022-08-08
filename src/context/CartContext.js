@@ -67,34 +67,43 @@ const Provider = (props) => {
             date: today.toLocaleDateString('es-ES'),
             total: total
         };
+        console.log(prop.nombre.value)
 
-        swal({
-            title: "Finalizar tu compra?",
-            text: "Al finalizar tu compra se te proporcionará tu ID de referencia, guardalo!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-                const db = getFirestore();
-                const OrderCollectionQuery = collection(db, 'orders');
-                addDoc(OrderCollectionQuery, Order)
-                .then((snapshot) => {
-                    swal(`Tu ID de referencia es: ${snapshot.id}`, {
-                        icon: "success",
-                      });
-                })
-                .catch((error) => {
-                    console.log(error)
-                    swal("Algo fue mal", {
-                        icon: "error",
-                      });
-                });
-            } else {
-              swal("Ya puedes seguir navegando");
-            }
-          });
+        if (prop.nombre.value !== '' && prop.correo.value !== '' && prop.telefono.value !== ''){
+            
+            swal({
+                title: "Finalizar tu compra?",
+                text: "Al finalizar tu compra se te proporcionará tu ID de referencia, guardalo!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                    const db = getFirestore();
+                    const OrderCollectionQuery = collection(db, 'orders');
+                    addDoc(OrderCollectionQuery, Order)
+                    .then((snapshot) => {
+                        swal(`Tu ID de referencia es: ${snapshot.id}`, {
+                            icon: "success",
+                          });
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                        swal("Algo fue mal", {
+                            icon: "error",
+                          });
+                    });
+                } else {
+                  swal("Ya puedes seguir navegando");
+                }
+              });
+        }
+        else{
+            swal("Debes rellenar todos los campos", {
+                icon: "warning",
+              });
+        };
     };
 
     return <CartContext.Provider value={{cart, AddToCart, DeleteAll, eliminarProducto, total, CreateOrder}}>
