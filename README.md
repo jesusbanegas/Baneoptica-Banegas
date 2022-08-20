@@ -12,7 +12,7 @@ Simula un espacio web de una óptica donde se muestran algunos productos típico
 
 ## GIF mostrando la funcionalidad del e-commerce:
 
-![PaginawebGIF](https://res.cloudinary.com/ddjgmaru2/image/upload/v1660979147/CoderHouse-BaneOptica/Gif_Proyecto_Final_wqkvbs.gif)
+![Gif Proyecto Final](https://user-images.githubusercontent.com/108037772/185734054-9a1d0b0b-fdea-4caf-946d-5f233029f39c.gif)
 
 ## Aspectos generales:
 
