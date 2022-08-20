@@ -10,6 +10,10 @@ Simula un espacio web de una óptica donde se muestran algunos productos típico
 ------------------------------------------------------------------------------------------------------------------------
 ![Paginaweb3](https://res.cloudinary.com/ddjgmaru2/image/upload/v1659768574/CoderHouse-BaneOptica/Paginaweb3_bon0if.png)
 
+## GIF mostrando la funcionalidad del e-commerce:
+
+![PaginawebGIF](https://res.cloudinary.com/ddjgmaru2/image/upload/v1660979147/CoderHouse-BaneOptica/Gif_Proyecto_Final_wqkvbs.gif)
+
 ## Aspectos generales:
 
 Uno de los aspectos más significativos del proyecto es el uso de componentes y el enlace entre ellos para lograr desarrollar el proyecto. Se aplican conocimientos básicos de programación web como html, css, javascript, y la implementación de JSX como nuevo recurso.

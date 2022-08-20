@@ -31,7 +31,7 @@ const Provider = (props) => {
     };
 
     useEffect(() => {
-        for(var i=0 ; i<cart.length; i++) {
+        for(let i=0 ; i<cart.length; i++) {
             const SumaProducto = cart[i].price * cart[i].numProductos;
             cart[i].suma = SumaProducto
         };
@@ -40,7 +40,7 @@ const Provider = (props) => {
 
     useEffect(() => {
         let sumatoria = 0;
-        for(var i=0 ; i<cart.length; i++) {
+        for(let i=0 ; i<cart.length; i++) {
             sumatoria = sumatoria + cart[i].suma
             settotal(sumatoria)
         }
@@ -55,7 +55,7 @@ const Provider = (props) => {
     };
 
     const CreateOrder = (prop) => {
-        var today = new Date();
+        let today = new Date();
         const Order = {
             buyer: {name: prop.nombre.value, email: prop.correo.value, phone: prop.telefono.value},
             items: cart.map((producto) => ({
